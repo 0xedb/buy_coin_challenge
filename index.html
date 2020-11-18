@@ -27,11 +27,13 @@
         </div>
         <span class="nav-section no-mobile"
           ><div>
-            <input
-              class="search"
-              type="search"
-              placeholder="search or jump to..."
-            />
+            <form>
+              <input
+                class="search"
+                type="search"
+                placeholder="search or jump to..."
+              />
+            </form>
           </div>
           <div><a href="#">Pull requests</a></div>
           <div><a href="#">Issues</a></div>
@@ -41,7 +43,7 @@
         >
       </div>
       <div class="nav-section">
-        <div>
+        <div class="notification">
           <a href="#">
             <img
               src="https://api.iconify.design/ic:baseline-notifications.svg?color=whitesmoke&width=20&height=20"
@@ -78,5 +80,65 @@
       </div>
     </nav>
     <!--navbar-->
+
+    <!--content-->
+    <section class="main">
+      <div>
+        <div>
+          <img
+            class="profile"
+            src="https://avatars3.githubusercontent.com/u/12274032?s=460&u=6696309d56c3d0ee253ac1624027d992b9fa66cc&v=4"
+            alt="profile"
+          />
+        </div>
+        <h2 id="name"></h2>
+        <p>theBashShell</p>
+        <span id="bio"></span>
+      </div>
+      <div class="rep-info">
+        <ul class="p-section">
+          <li>
+            <img
+              src="https://api.iconify.design/bx:bx-book-open.svg?color=%236a737d&width=18&height=18"
+              alt="icon"
+            /><a href="#">Overview</a>
+          </li>
+          <li class="repo">
+            <img
+              src="https://api.iconify.design/feather:book.svg?color=%236a737d&width=18&height=18"
+              alt="icon"
+            /><a href="#">Repositories</a>
+          </li>
+          <li>
+            <img
+              src="https://api.iconify.design/ant-design:project-outlined.svg?color=%236a737d&width=18&height=18"
+              alt="icon"
+            /><a href="#">Projects</a>
+          </li>
+          <li>
+            <img
+              src="https://api.iconify.design/octicon:package-24.svg?color=%236a737d&width=18&height=18"
+              alt="icon"
+            /><a href="#">Packages</a>
+          </li>
+        </ul>
+        <div>
+          <form class="rep-search">
+            <input type="search" placeholder="find a repository..." />
+          </form>
+        </div>
+        <p><b>124</b> results for <b>public</b> repositories</p>
+        <hr class="divider" />
+        <div class="repo-list"></div>
+      </div>
+    </section>
+    <!--content-->
+
+    <!--script-->
+    <script type="module">
+      import { createRepoFields, fetGithubData } from "./index.js";
+      fetGithubData();
+      createRepoFields();
+    </script>
   </body>
 </html>
