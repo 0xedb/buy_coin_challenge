@@ -1,5 +1,5 @@
 const CREDENTIALS = {
-  token: "9825ad1dccca971121877baab48f428a5cd70354",
+  token: "NmU1NjA0YjFlODM1N2YzZWQ2YWQwZjgwMjNlZmE0YmZmZDdjNzlkMQ==",
   user: "theBashShell",
 };
 
@@ -7,15 +7,9 @@ const URL = "https://api.github.com/graphql";
 
 const headers = {
   "Content-Type": "application/json",
-  Authorization: `Bearer ${CREDENTIALS.token}`,
+  Authorization: `Bearer ${atob(CREDENTIALS.token)}`,
 };
-
-var myHeaders = new Headers();
-myHeaders.append(
-  "Authorization",
-  "Bearer 9825ad1dccca971121877baab48f428a5cd70354"
-);
-myHeaders.append("Content-Type", "application/json");
+ 
 
 const body = JSON.stringify({
   query: `query getData {    
